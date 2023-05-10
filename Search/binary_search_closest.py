@@ -9,7 +9,8 @@ def binary_search_closest(arr, target):
     while left <= right:
         mid = (left + right) // 2
 
-        closest_val = min(distance(arr[mid]), distance(closest_val))
+        if distance(arr[mid]) < distance(closest_val):
+            closest_val = arr[mid]
 
         if arr[mid] == target:
             return target
@@ -23,5 +24,4 @@ def binary_search_closest(arr, target):
 
 arr = [1, 4, 6, 8, 10, 12]
 target = 7
-closest_val = binary_search_closest(arr, target)
-print(closest_val)  # Output: 6
+print(binary_search_closest(arr, target))  # Output: 6
