@@ -4,7 +4,7 @@ def find_town_judge(n, trust):
 
     # visited = [] * (n + 1)
     trusted = [0] * (n + 1)
-    adjList = [[] for _ in range(n+1)]
+    adjList = [[] for _ in range(n + 1)]
     for truster, trustee in trust:
         adjList[truster].append(trustee)
         trusted[trustee] += 1

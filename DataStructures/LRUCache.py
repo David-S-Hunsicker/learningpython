@@ -5,14 +5,15 @@ class Node:
         self.next = None
         self.prev = None
 
+
 class LRUCache:
     def __init__(self, capacity):
         self.capacity = capacity
         self.nodes = {}
         self.head = Node(None, None)
         self.tail = Node(None, None)
-        self.head.next = tail
-        self.tail.prev = head
+        self.head.next = self.tail
+        self.tail.prev = self.head
 
     def get(self, key):
         if key in self.nodes:
@@ -33,9 +34,9 @@ class LRUCache:
         if len(self.nodes) > self.capacity: self._remove_()
 
     def _remove_(self):
-        node = tail.prev
-        tail.prev = node.prev
-        node.prev.next = tail
+        node = self.tail.prev
+        self.tail.prev = node.prev
+        node.prev.next = self.tail
         del self.nodes[node.key]
 
     def _top_(self, node):

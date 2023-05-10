@@ -1,14 +1,14 @@
 def binary_search(a: [], target):
-    l = 0
-    r = len(a) - 1
-    while l < r:
-        m = l + (r - l) // 2
+    left = 0
+    right = len(a) - 1
+    while left < right:
+        m = left + (right - left) // 2
         if target < a[m]:
-            r = m
+            right = m
         else:
-            l = m + 1
+            left = m + 1
 
-    return a[l] == target
+    return a[left] == target
 
 
 arr = [1, 2, 3, 5, 7, 8, 9, 11, 15, 17, 19, 23, 25, 28]

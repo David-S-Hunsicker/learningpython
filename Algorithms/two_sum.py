@@ -3,24 +3,39 @@
 # The order of the indices returned does not matter.
 # A single index cannot be used twice.
 
-def two_sum(arr, target):
+# Time: O(n)
+# Space: O(n)
+def two_sum_set(arr, target):
+    nums = set()
+    for _, num in enumerate(arr):
+        if target - num in nums:
+            return [num, target - num]
+        nums.add(num)
+    return [-1, -1]
+
+
+numbers = [2, 3, 5, 7, 1, 0, 5, 9]
+target = 10
+print(two_sum_set(numbers, target))
+
+
+# Time: O(n log(n)) for the Tim sort
+# Space: O(n)
+def two_sum_two_pointers(arr, target):
+    arr.sort()  # Now in ascending
     lo = 0
     hi = len(arr) - 1
     while lo < hi:
-        sum = arr[lo] + arr[hi]
-        if sum == target:
-            return [[arr[lo], arr[hi]]]
-            lo += 1
+        sum = lo + hi
+        if target == sum:
+            return [lo, hi]
+        elif sum > target:
             hi -= 1
-        elif sum < target:
-            lo += 1
         else:
-            hi -= 1
-        # if it wasn't right the first time it won't be right the nth time
-        if lo > start:
-            while lo >= hi and arr[lo] == arr[lo - 1]:
-                lo += 1
-        if hi < len(arr) - 1:
-            while lo <= hi and arr[hi] == arr[hi + 1]:
-                hi -= 1
+            lo += 1
     return [-1, -1]
+
+
+numbers = [2, 3, 5, 7, 1, 0, 5, 9]
+target = 10
+print(two_sum_set(numbers, target))

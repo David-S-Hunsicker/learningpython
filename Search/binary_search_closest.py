@@ -20,6 +20,7 @@ def binary_search_closest(arr, target):
 
     return closest_val
 
+
 arr = [1, 4, 6, 8, 10, 12]
 target = 7
 closest_val = binary_search_closest(arr, target)

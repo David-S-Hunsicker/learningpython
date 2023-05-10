@@ -1,4 +1,3 @@
-
 def find_order(words):
     graph = {}
 
@@ -39,9 +38,10 @@ def find_order(words):
     # Convert the result array to a string and return
     return "".join(order) if len(order) == len(chars) else ""
 
-words= ["baa", "abcd", "abca", "cab", "cad"]
+
+words = ["baa", "abcd", "abca", "cab", "cad"]
 print(find_order(words))
-words = ["wrt","wrf","er","ett","rftt"]
+words = ["wrt", "wrf", "er", "ett", "rftt"]
 print(find_order(words))
 
 #

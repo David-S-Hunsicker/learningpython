@@ -5,7 +5,7 @@ class Solution:
 
         def assign_server(desired_server, time, load):
             server = desired_server
-            while server_load_times[server] > time: # this is too slow, need heaps to speed it up
+            while server_load_times[server] > time:  # this is too slow, need heaps to speed it up
 
                 server = (server + 1) % k
                 if server == desired_server: return  # drop this request
@@ -27,9 +27,8 @@ class Solution:
         return [server_request_count[i][0] for i in range(len(server_request_count))]
 
 
-
 k = 2
-arrival = [1,4,5,7]
-load = [3,2,7,8]
+arrival = [1, 4, 5, 7]
+load = [3, 2, 7, 8]
 s = Solution()
 print(s.busiestServers(k, arrival, load))

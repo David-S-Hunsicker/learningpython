@@ -1,5 +1,6 @@
 import heapq
 
+
 def dijkstra(adj_list, start):
     # initialize distance dictionary and heap
     dist = {node: float('inf') for node in adj_list}
