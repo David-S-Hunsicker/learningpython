@@ -31,7 +31,8 @@ class LRUCache:
             node = Node(key, value)
             self.nodes[key] = node
             self._top_(node)
-        if len(self.nodes) > self.capacity: self._remove_()
+        if len(self.nodes) > self.capacity:
+            self._remove_()
 
     def _remove_(self):
         node = self.tail.prev
@@ -40,10 +41,13 @@ class LRUCache:
         del self.nodes[node.key]
 
     def _top_(self, node):
-        if node == self.head.next: return
+        if node == self.head.next:
+            return
 
-        if node.next: node.prev.next = node.next
-        if node.prev: node.next.prev = node.prev
+        if node.next:
+            node.prev.next = node.next
+        if node.prev:
+            node.next.prev = node.prev
 
         node.next = self.head.next
         node.prev = self.head
