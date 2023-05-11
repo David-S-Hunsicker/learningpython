@@ -2,16 +2,18 @@
 Count the number of inversions in a given array of numbers. A pair (nums[i], nums[j]) is said to form an inversion if nums[i] > nums[j] and i < j.
 '''
 import bisect
+
+
 def count_inversions(nums):
     n = len(nums)
     increasing = [nums[0]]
     inversions = 0
-    for val in range(1, len(nums)):
+    for val in range(1, n):
         if nums[val] >= increasing[-1]:
             increasing.append(nums[val])
         else:
             insertion_point = bisect.bisect_right(increasing, nums[val])
-            inversions +=  len(increasing) - insertion_point
+            inversions += len(increasing) - insertion_point
     return inversions
 
 

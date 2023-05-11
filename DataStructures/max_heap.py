@@ -34,6 +34,7 @@ class max_heap:
             self.heap[index], self.heap[largest] = self.heap[largest], self.heap[index]
             self._bubble_down(largest)
 
+
 heap = max_heap()
 heap.push(5)
 heap.push(7)
@@ -41,6 +42,6 @@ heap.push(3)
 heap.push(12)
 heap.push(1)
 
-print(heap.pop()) # 12
-print(heap.pop()) # 7
-print(heap.pop()) # 5
+print(heap.pop())  # 12
+print(heap.pop())  # 7
+print(heap.pop())  # 5
